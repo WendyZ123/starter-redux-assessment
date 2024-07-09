@@ -1,8 +1,8 @@
 import { useState } from 'react';
 // Task 2: Import the `useDispatch()` method from the appropriate package
 import { useDispatch } from 'react-redux';
-
 // Task 3: Import the `addPhoto()` action creator from the photos slice
+import { addPhoto } from '../photos.slice';
 
 import './create.css';
 
