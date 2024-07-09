@@ -5,6 +5,7 @@ import {
   selectError,
   selectLoading,
   // Task 18: Import the `selectSuggestion()` selector from the suggestion slice
+  selectSuggestion,
 } from './suggestion.slice';
 import './suggestion.css';
 
