@@ -27,8 +27,8 @@ const options = {
       state.loading = true;
       state.error = false;
     },
-    [fetchSuggestion.fulfilled]: (state, { payload: { quote, author } }) => {
-      state.quote = { quote, author };
+    [fetchSuggestion.fulfilled]: (state, { payload: { imageUrl, caption } }) => {
+      state.suggestion = { imageUrl, caption };
       state.loading = false;
       state.error = false;
     },
@@ -44,6 +44,6 @@ const suggestionSlice = createSlice(options);
 export default suggestionSlice.reducer;
 
 // Task 17: Create a selector, called `selectSuggestion`, for the `suggestion` state variable and export it from the file
-
+export const selectSuggestion = (state) => state.suggestion.suggestion;
 export const selectLoading = (state) => state.suggestion.loading;
 export const selectError = (state) => state.suggestion.error;
