@@ -9,6 +9,7 @@ import './create.css';
 export default function CreatePhoto() {
   const [formData, setFormData] = useState({ imageUrl: '', caption: '' });
   // Task 4: Store a reference to the Redux store's dispatch method in a variable called `dispatch`
+  const dispatch = useDispatch();
 
   function handleChange({ target: { name, value } }) {
     setFormData({
