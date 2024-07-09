@@ -9,6 +9,7 @@ export default function SearchBar() {
 
   function handleChange({ target: { value } }) {
     // Task 11: Dispatch the `setSearchTerm()` action creator, passing in the value of the search input
+    dispatch(setSearchTerm(value));
   }
 
   return (
