@@ -1,39 +1,28 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  // Task 7: Import the `removePhoto()` action creator from the photos slice
-  removePhoto,
-  selectAllPhotos,
-  // Task 13: Import the `selectFilteredPhotos()` selector from the photos slice
-} from '../photos.slice';
-import './list.css';
+  removeNote,
+  // selectAllNotes,
+  selectFilteredNotes,
+} from '../notes.slice';
 
-export default function PhotosList() {
-  // Task 14: Call `useSelector()` below with `selectFilteredPhotos` instead of `selectAllPhotos`
-  const photos = useSelector(selectAllPhotos);
-  // Task 8: Store a reference to the Redux store's dispatch method in a variable called `dispatch`
+export default function NotesList() {
+  const notes = useSelector(selectFilteredNotes);
   const dispatch = useDispatch();
 
   function handleDeleteButtonClick(id) {
-    // Task 9: Dispatch the `removePhoto()` action creator, passing in the id
+    dispatch(removeNote(id));
   }
 
-  const photosListItems = photos.map(({ id, caption, imageUrl }) => (
+  const notesListItems = notes.map(({ id, note }) => (
     <li key={id}>
-      <img alt={caption} src={imageUrl} />
-      <div>
-        <p>{caption}</p>
-        <button
-          data-testid={`${caption}-button`}
-          onClick={() => handleDeleteButtonClick(id)}>
-          Delete
-        </button>
-      </div>
+      <span>{note}</span>
+      <button onClick={() => handleDeleteButtonClick(id)}>Delete</button>
     </li>
   ));
 
-  return photosListItems.length > 0 ? (
-    <ul>{photosListItems}</ul>
+  return notesListItems.length > 0 ? (
+    <ul>{notesListItems}</ul>
   ) : (
-    <h3>No doggies to display...</h3>
+    <h3>Please add some notes</h3>
   );
 }
