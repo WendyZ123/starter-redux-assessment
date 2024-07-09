@@ -21,6 +21,7 @@ export default function CreatePhoto() {
   function handleSubmit(event) {
     event.preventDefault();
     // Task 5: Dispatch the `addPhoto()` action creator, passing in the form data
+    dispatch(addPhoto(formData));
     setFormData({ imageUrl: '', caption: '' });
   }
 
