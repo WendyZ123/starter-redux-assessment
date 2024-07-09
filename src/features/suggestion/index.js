@@ -34,8 +34,8 @@ export default function Suggestion() {
     // Task 21: Enable the two JSX lines below needed to display the suggestion on the page
     render = (
       <>
-        {/* <img alt={caption} src={imageUrl} />
-        <p>{imageUrl}</p> */}
+        <img alt={caption} src={imageUrl} />
+        <p>{imageUrl}</p>
       </>
     );
   }
