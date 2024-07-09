@@ -20,6 +20,7 @@ export default function Suggestion() {
   useEffect(() => {
     async function loadSuggestion() {
       // Task 20: Dispatch the fetchSuggestion() action creator
+      await dispatch(fetchSuggestion());
     }
     loadSuggestion();
   }, [dispatch]);
